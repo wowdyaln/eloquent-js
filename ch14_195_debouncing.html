@@ -1,0 +1,31 @@
+
+<textarea>type something here...</textarea>
+
+<script>
+  var textarea = document.querySelector("textarea");
+  var timeout;
+  textarea.addEventListener("keydown", function(){
+    clearTimeout(timeout);
+    timeout = setTimeout(function(){
+      console.log("you stopped typing.");
+    }, 500);
+  });
+
+  function displayCoords(event){
+    document.body.textContent =
+    "mouse at " + event.pageX + ", " + event.pageY;
+  }
+
+  var scheduled = false, lastEvent; //一行定義兩個變數
+  addEventListener("mousemove", function(event){
+    lastEvent = event;
+    if (!scheduled){
+      scheduled = true;
+      setTimeout(function(){
+        scheduled = false;
+        displayCoords(lastEvent);
+      }, 250);
+    }
+  });
+
+</script>

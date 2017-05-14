@@ -1,0 +1,30 @@
+<style>
+  .progress {
+    border: 1px solid blue;
+    width: 300px;
+    position: fixed;
+    top: 10px; left: 300px;
+  }
+  .progress > div {
+    height: 12px;
+    background: blue;
+    width: 0%;
+  }
+  body {
+    height: 2000px;
+  }
+</style>
+
+<div class="progress"><div></div></div>
+<p>scroll me</p>
+
+
+<script>
+  var bar = document.querySelector(".progress div"); // .progress 的childNode "div"
+  addEventListener("scroll", function(){
+    var max = document.body.scrollHeight - innerHeight;
+    var percent = (pageYOffset / max) * 100;
+    bar.style.width = percent + "%";
+  });
+
+</script>
