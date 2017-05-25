@@ -154,3 +154,5 @@ function findSolution(target){
 
 
 console.log(findSolution(10731));
+console.log(findSolution(499832));
+
