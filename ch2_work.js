@@ -133,7 +133,7 @@ function board(width, height){
 
   for(i=0; i<height; i++){
     temp += "\n";
-
+debugger;
     for(j=0; j<width; j++){
       if ((j+i)%2 == 0)
         temp += h;
@@ -147,14 +147,3 @@ function board(width, height){
 
 
 
-for(var i=0; i<8; i++){
-  for(var j=0; j<8; j++){
-    if((i%2 == 0 && j%2 == 0) || (i%2 == 1 && j%2 ==1))
-      temp += hash;
-    else
-    //((i%2 == 0 && j%2 == 1) || (i%2 == 1 && j%2 == 0))
-     temp += space;
-
-  temp += "\n";
- }
-}
